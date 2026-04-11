@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On Portland | Vote Green | 30 April 2026</title>
+<meta property="og:title" content="On Portland | Vote Green | 30 April 2026">
+<meta property="og:description" content="Portland isn't the end of the road. It's the beginning of something else entirely.">
+<meta property="og:type" content="website">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap');
+
+  :root {
+    --stone: #2a2520;
+    --stone-mid: #3d3530;
+    --stone-light: #8a7d70;
+    --stone-pale: #c4b8a8;
+    --cream: #f5f0e8;
+    --green-dark: #1a3a2a;
+    --green-mid: #2d5a3d;
+    --green-bright: #4a9e6b;
+    --green-light: #7bc497;
+    --green-pale: #d4edd9;
+    --white: #faf9f6;
+    --red-accent: #c0392b;
+    --gold: #c9a84c;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--stone);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* =================== BEAT 1: OPENING =================== */
+
+  #beat1 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--stone);
+    overflow: hidden;
+    padding: 2rem;
+  }
+
+  #beat1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(42,37,32,0) 0%, rgba(26,58,42,0.15) 100%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(196,184,168,0.02) 2px,
+        rgba(196,184,168,0.02) 4px
+      );
+    pointer-events: none;
+  }
+
+  #beat1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(26,58,42,0.3), transparent);
+    pointer-events: none;
+  }
+
+  .opening-text {
+    text-align: center;
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .prelude {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--stone-pale);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.5s;
+    margin-bottom: 2.5rem;
+  }
+
+  .opening-line1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 1s;
+    margin-bottom: 0.5rem;
+  }
+
+  .opening-pause {
+    display: block;
+    height: clamp(1.5rem, 4vw, 2.5rem);
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards 2s;
+    color: var(--green-bright);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .opening-line2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--green-light);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 2.5s;
+    margin-top: 1.5rem;
+  }
+
+  .opening-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--stone-pale);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 3.5s;
+    margin-top: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .scroll-prompt {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 4.5s;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .scroll-prompt span {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid var(--green-bright);
+    border-bottom: 2px solid var(--green-bright);
+    transform: rotate(45deg);
+    margin: 0 auto;
+    animation: bounce 2s infinite 5s;
+  }
+
+  /* =================== BEAT 2: IDENTITY =================== */
+
+  #beat2 {
+    min-height: 100vh;
+    background: var(--stone);
+    position: relative;
+    padding: 6rem 2rem;
+    overflow: hidden;
+  }
+
+  #beat2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(196,184,168,0.015) 60px,
+        rgba(196,184,168,0.015) 61px
+      );
+    pointer-events: none;
+  }
+
+  .identity-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-marker {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--green-bright);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-marker::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--green-mid);
+  }
+
+  .identity-line {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .identity-line.bold-line {
+    font-weight: 600;
+    font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+    color: var(--white);
+    line-height: 1.5;
+  }
+
+  .identity-line.green-line {
+    color: var(--green-light);
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+  }
+
+  .identity-line.big-line {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 2rem;
+  }
+
+  .identity-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: var(--green-bright);
+    margin: 3rem 0;
+    opacity: 0;
+    transition: opacity 0.8s ease, width 0.8s ease;
+  }
+
+  .divider.visible {
+    opacity: 1;
+    width: 120px;
+  }
+
+  /* =================== BEAT 3: THE WOUND =================== */
+
+  #beat3 {
+    background: #1a1510;
+    position: relative;
+    padding: 6rem 2rem;
+    overflow: hidden;
+  }
+
+  #beat3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--red-accent), transparent);
+  }
+
+  .wound-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .wound-block {
+    margin-bottom: 5rem;
+  }
+
+  .wound-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .wound-heading.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .wound-text {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--stone-pale);
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .wound-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .wound-text strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .wound-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: 700;
+    color: var(--red-accent);
+    line-height: 1.4;
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--red-accent);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .wound-stat.visible {
+    opacity: 1;
+  }
+
+  .damning-line {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    border-top: 1px solid rgba(196,184,168,0.2);
+    border-bottom: 1px solid rgba(196,184,168,0.2);
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .damning-line.visible {
+    opacity: 1;
+  }
+
+  /* =================== BEAT 4: THE POSSIBILITY =================== */
+
+  #beat4 {
+    background: var(--green-dark);
+    position: relative;
+    padding: 6rem 2rem;
+    overflow: hidden;
+  }
+
+  #beat4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(74,158,107,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #beat4::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--green-bright), transparent);
+  }
+
+  .possibility-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .possibility-intro {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--green-pale);
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .possibility-intro.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .memo-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+
+  .memo-title.visible {
+    opacity: 1;
+  }
+
+  .memo-subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 3rem;
+    opacity: 0;
+    transition: opacity 1s ease 0.3s;
+  }
+
+  .memo-subtitle.visible {
+    opacity: 1;
+  }
+
+  .possibility-text {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--green-pale);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .possibility-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .possibility-text strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .possibility-big {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--green-light);
+    line-height: 1.4;
+    margin: 3rem 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .possibility-big.visible {
+    opacity: 1;
+  }
+
+  /* =================== BEAT 5: THE PEOPLE =================== */
+
+  #beat5 {
+    background: var(--cream);
+    color: var(--stone);
+    position: relative;
+    padding: 6rem 2rem;
+  }
+
+  #beat5::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--green-mid), transparent);
+  }
+
+  .people-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .people-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--stone);
+    line-height: 1.2;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .people-intro.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .candidate-block {
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid rgba(42,37,32,0.15);
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .candidate-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .candidate-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .candidate-ward {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 0.5rem;
+  }
+
+  .candidate-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 900;
+    color: var(--stone);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  .candidate-text {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--stone-mid);
+    margin-bottom: 1.2rem;
+  }
+
+  .candidate-text strong {
+    color: var(--stone);
+    font-weight: 600;
+  }
+
+  .candidate-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--green-dark);
+    line-height: 1.5;
+    padding: 2rem 0 2rem 1.5rem;
+    border-left: 3px solid var(--green-bright);
+    margin: 2.5rem 0;
+  }
+
+  .candidate-ps {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    font-weight: 600;
+    color: var(--stone);
+    background: var(--green-pale);
+    padding: 1.5rem 2rem;
+    border-radius: 4px;
+    margin-top: 2rem;
+    line-height: 1.6;
+  }
+
+  .candidate-ps em {
+    font-style: italic;
+    color: var(--green-dark);
+  }
+
+  .green-team {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(45,90,61,0.08);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--stone-mid);
+    line-height: 1.6;
+  }
+
+  .green-team strong {
+    color: var(--green-dark);
+    font-weight: 600;
+  }
+
+  /* =================== BEAT 6: THE ASK =================== */
+
+  #beat6 {
+    background: var(--green-dark);
+    color: var(--white);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #beat6::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(74,158,107,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .ask-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .ask-date {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .ask-date.visible {
+    opacity: 1;
+  }
+
+  .ask-date-sub {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 4rem;
+    opacity: 0;
+    transition: opacity 0.8s ease 0.2s;
+  }
+
+  .ask-date-sub.visible {
+    opacity: 1;
+  }
+
+  .ward-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .ward-cards.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ward-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(123,196,151,0.3);
+    border-radius: 6px;
+    padding: 2rem 1.5rem;
+    text-align: left;
+  }
+
+  .ward-card-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .ward-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .ask-times {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    color: var(--green-pale);
+    margin-bottom: 1rem;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    line-height: 1.8;
+  }
+
+  .ask-times.visible {
+    opacity: 1;
+  }
+
+  .ask-id-notice {
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: var(--gold);
+    line-height: 1.7;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    text-align: left;
+  }
+
+  .ask-id-notice.visible {
+    opacity: 1;
+  }
+
+  .ask-id-notice strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .ask-id-notice a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* =================== BEAT 7: SHARE =================== */
+
+  #beat7 {
+    background: var(--stone);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #beat7::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, transparent, var(--green-bright), transparent);
+  }
+
+  .share-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .share-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .share-heading.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .share-body {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--stone-pale);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .share-body.visible {
+    opacity: 1;
+  }
+
+  .share-truth {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--green-light);
+    margin: 3rem 0;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .share-truth.visible {
+    opacity: 1;
+  }
+
+  .share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 380px;
+    margin: 3rem auto 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .share-buttons.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: #fff;
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1.1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-whatsapp:hover {
+    background: #1eb855;
+    transform: translateY(-2px);
+  }
+
+  .btn-copy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: transparent;
+    color: var(--stone-pale);
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    border: 1px solid rgba(196,184,168,0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-copy:hover {
+    border-color: var(--stone-pale);
+    color: var(--white);
+  }
+
+  .btn-copy.copied {
+    border-color: var(--green-bright);
+    color: var(--green-bright);
+  }
+
+  /* =================== FOOTER =================== */
+
+  footer {
+    background: #111;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .footer-closing {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--green-light);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+    color: var(--stone-light);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .footer-email {
+    color: var(--green-bright);
+    text-decoration: none;
+  }
+
+  /* =================== ANIMATIONS =================== */
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(6px); }
+  }
+
+  /* =================== RESPONSIVE =================== */
+
+  @media (max-width: 480px) {
+    .ward-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .ward-card {
+      text-align: center;
+    }
+
+    #beat1 {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- BEAT 1: OPENING -->
+<section id="beat1">
+  <div class="opening-text">
+    <p class="prelude">Portland Town Council &nbsp;·&nbsp; 30 April 2026</p>
+    <h1 class="opening-line1">You don't live<br>in Portland.</h1>
+    <span class="opening-pause">&nbsp;</span>
+    <h1 class="opening-line2">You live on it.</h1>
+    <p class="opening-sub">There's a difference.<br>And you've always known it.</p>
+  </div>
+  <div class="scroll-prompt">
+    <span>keep reading</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- BEAT 2: IDENTITY -->
+<section id="beat2">
+  <div class="identity-inner">
+    <div class="section-marker">The island</div>
+
+    <p class="identity-line big-line">Portland isn't the end of the road.<br>It's the beginning of something else entirely.</p>
+
+    <p class="identity-line">You already know what Portland is.</p>
+
+    <p class="identity-line">You don't need anyone to explain the light on the water at six in the morning. Or why crossing the causeway feels different from every other road in England — the lights of the port and homes to your left, dramatic cliffs rising to your right, and the knowledge that you are arriving somewhere that exists entirely on its own terms. Or what it means to be from here rather than just passing through.</p>
+
+    <p class="identity-line">You know not to say the R word. You say bunny. You say underground mutton if you're feeling fancy. But you don't say the R word. Not on Portland.</p>
+
+    <p class="identity-line bold-line">Portland is weird by choice, beautiful by nature, and forgotten by almost everyone who should be paying attention.</p>
+
+    <div class="divider"></div>
+
+    <p class="identity-line">One road on. One road off.</p>
+
+    <p class="identity-line green-line">When there are temporary traffic lights on the beach road, you know about it before the algorithm does.</p>
+
+    <p class="identity-line">That's not a flaw. That's Portland. A place that talks to itself faster and more honestly than anywhere else in England. Where people know their neighbours. Where when the chips are down, it pulls together.</p>
+
+    <p class="identity-line bold-line">There is no other place like this.</p>
+
+    <div class="divider"></div>
+
+    <p class="identity-line">And right now, this place is at a crossroads.</p>
+
+    <p class="identity-line">Two seats on Portland Town Council are vacant. Two people want to fill them. What happens on 30 April matters more than most elections on this island ever have.</p>
+
+    <p class="identity-line green-line">Here's why.</p>
+  </div>
+</section>
+
+<!-- BEAT 3: THE WOUND -->
+<section id="beat3">
+  <div class="wound-inner">
+
+    <div class="wound-block">
+      <h2 class="wound-heading">Hardy Block.</h2>
+      <p class="wound-text">You've looked at it your whole life.</p>
+      <p class="wound-text">A derelict tower sitting on Portland like a monument to being ignored. <strong>Not because nothing can be done. Because developers have decided that doing nothing is more profitable than building homes.</strong></p>
+      <p class="wound-text">Homes that Portland people need. Warm, affordable, local homes. Not holiday lets. Not investment properties sitting empty while local families can't find anywhere to live.</p>
+      <p class="wound-text">Hardy Block is what happens when the people making decisions about Portland don't have to live on it.</p>
+    </div>
+
+    <div class="wound-block">
+      <h2 class="wound-heading">The incinerator.</h2>
+      <p class="wound-text">Not proposed for somewhere abstract. Proposed for here.</p>
+      <p class="wound-text">For the air above Portland and Weymouth. For the lungs of the people who live on this island.</p>
+
+      <div class="wound-stat">80 lorries. On and off the island. 24 hours a day. For decades.</div>
+
+      <p class="wound-text">Passing within two metres of the grounds of Portland Castle. Built for Henry VIII. A scheduled ancient monument.</p>
+      <p class="wound-text"><strong>The only people who want this built are the port and a handful of very wealthy businessmen who do not live here.</strong></p>
+
+      <div class="damning-line">"This would not happen anywhere else."</div>
+
+      <p class="wound-text">It has fallen at every legal hurdle so far. The Environment Agency has let Portland down. The fight continues.</p>
+    </div>
+
+    <div class="wound-block">
+      <h2 class="wound-heading">The daily grind.</h2>
+      <p class="wound-text">The young people with nowhere to go because the youth clubs that exist need serious love and attention and nobody in power seems to notice. The anti-social behaviour that follows when you leave young people without anywhere to be.</p>
+      <p class="wound-text">The traffic. The one road. The single broken-down vehicle that turns your commute into an hour you won't get back. The fact that the train no longer even runs to Portland.</p>
+      <p class="wound-text"><strong>These are not small things. They are the daily experience of living on Portland. Of decisions being made about you, not with you.</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BEAT 4: THE POSSIBILITY -->
+<section id="beat4">
+  <div class="possibility-inner">
+    <div class="section-marker">The future</div>
+
+    <p class="possibility-intro">But here is what nobody outside Portland seems to understand. This island is not just beautiful. It is not just resilient. It is not just weird in the best possible way.</p>
+
+    <p class="possibility-text"><strong>Portland is sitting on the edge of one of the most important ideas anyone in England has had in a generation.</strong></p>
+
+    <div class="memo-title">MEMO</div>
+    <div class="memo-subtitle">Museum of Extinction and Memory &nbsp;·&nbsp; Portland</div>
+
+    <p class="possibility-text">Twenty years in the making. Twenty million pounds awarded by the government. A vision for a place where people come to understand what is truly at stake for life on this planet — and leave changed.</p>
+
+    <p class="possibility-text">This is not a tourist attraction.</p>
+
+    <p class="possibility-text"><strong>This is a statement about what Portland is and what Portland stands for.</strong></p>
+
+    <p class="possibility-text">Extinction. Deep time. Stone that was here before us and will be here long after. Wind that has no agenda. A place at the end of the line that turns out to be the beginning of something the whole world needs to see.</p>
+
+    <div class="possibility-big">Built from Portland stone.<br>On the edge of the world.<br>On your island.</div>
+
+    <p class="possibility-text">But MEMO only works if Portland can receive it on Portland's terms. If visitors arrive by sea, by shuttle, by something smarter than eighty extra vehicles crawling down the one road every morning.</p>
+
+    <p class="possibility-text">That is a planning question. A political will question. <strong>A question for town councillors who understand Portland from the inside — not consultants who drive back to Dorchester at the end of the day.</strong></p>
+
+    <p class="possibility-text">The Green Party understands what MEMO is. It is the most Green-aligned idea this island has ever produced. And the Greens are the only party with the values and the vision to make sure it arrives on Portland's terms — not someone else's.</p>
+
+  </div>
+</section>
+
+<!-- BEAT 5: THE PEOPLE -->
+<section id="beat5">
+  <div class="people-inner">
+    <div class="section-marker" style="color: var(--green-mid);">The candidates</div>
+
+    <h2 class="people-intro">Two Portland people.<br>Not politicians.</h2>
+
+    <!-- LUCY -->
+    <div class="candidate-block">
+      <div class="candidate-ward">Underhill Ward</div>
+      <h3 class="candidate-name">Lucy Hardwicke</h3>
+
+      <p class="candidate-text">Lucy was born locally. She has called Portland home since 2015.</p>
+
+      <p class="candidate-text">She was a teacher. Then a home educator. Both things taught her the same lesson: <strong>you have to actually listen to people before you can help them.</strong> Not perform listening. Actually listen.</p>
+
+      <p class="candidate-text">She has spent years meeting people on Underhill, getting things done, showing up. Hardy Block is her mission. Affordable homes for local people — not profits for distant developers who've never set foot on the island.</p>
+
+      <p class="candidate-text">She wants young people on Underhill to have somewhere to go and something to invest in. The youth clubs that exist need proper support and she intends to fight for it.</p>
+
+      <p class="candidate-text">She already has two Green councillors beside her — Kia Pope and Bradley Plant are already fighting for Underhill. Lucy isn't starting from scratch. She's completing a team.</p>
+
+      <blockquote class="candidate-quote">"I was born locally and have proudly called Portland home since 2015. I care deeply about the future of our island and the opportunities available for local families."</blockquote>
+
+      <div class="candidate-ps">
+        <em>"P.S. I can win — but it'll be close with a competitive race. Please use your vote for real change."</em>
+      </div>
+    </div>
+
+    <!-- MARK -->
+    <div class="candidate-block">
+      <div class="candidate-ward">Tophill East Ward</div>
+      <h3 class="candidate-name">Mark Williams</h3>
+
+      <p class="candidate-text">Mark was born and bred on Portland.</p>
+
+      <p class="candidate-text">He coordinated the survey that pushed First Bus to connect Weston Street and Wakeham to the network. He did it alongside a Labour councillor — because when something matters for Portland people, party politics can wait.</p>
+
+      <p class="candidate-text">He lent his media skills to the Stop Portland Incinerator campaign. He volunteers at Portland Museum. <strong>He has just sown a wildflower meadow in front of his home.</strong></p>
+
+      <p class="candidate-text">He stood for Tophill East last year. He came second. The person who pushed him into second place has since resigned amid a formal misconduct investigation.</p>
+
+      <blockquote class="candidate-quote">"Portland is my home, and I'm prouder still of our community which, when the chips are down, pulls together."</blockquote>
+
+      <div class="candidate-ps">
+        <em>"I don't give up."</em>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BEAT 6: THE ASK -->
+<section id="beat6">
+  <div class="ask-inner">
+    <div class="section-marker" style="color: var(--green-light); justify-content: center;">Your vote</div>
+
+    <div class="ask-date">30 April</div>
+    <div class="ask-date-sub">Thursday &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Portland Town Council</div>
+
+    <div class="ward-cards">
+      <div class="ward-card">
+        <div class="ward-card-label">Underhill Ward</div>
+        <div class="ward-card-name">Vote<br>Lucy Hardwicke</div>
+      </div>
+      <div class="ward-card">
+        <div class="ward-card-label">Tophill East Ward</div>
+        <div class="ward-card-name">Vote<br>Mark Williams</div>
+      </div>
+    </div>
+
+    <p class="ask-times">Polling stations open 7am to 10pm.<br>Check your ward if you are not sure which one you are in.</p>
+
+    <div class="ask-id-notice">
+      <strong>Photo ID required at the polling station</strong>
+      No accepted ID? Apply free for a Voter Authority Certificate by <strong>5pm on 22 April</strong> at <a href="https://www.gov.uk/apply-for-photo-id-voter-authority-certificate" target="_blank">gov.uk/apply-for-photo-id-voter-authority-certificate</a> or call Electoral Services on 01305 838299.
+    </div>
+
+    <p class="ask-times" style="margin-top:1rem;">
+      Register to vote: midnight 14 April &nbsp;·&nbsp; Postal vote: 5pm 15 April<br>
+      Proxy vote: 5pm 22 April &nbsp;·&nbsp; Emergency proxy: 5pm 30 April
+    </p>
+
+  </div>
+</section>
+
+<!-- BEAT 7: SHARE -->
+<section id="beat7">
+  <div class="share-inner">
+    <div class="section-marker" style="justify-content: center;">Pass it on</div>
+
+    <h2 class="share-heading">You know someone<br>who needs to see this.</h2>
+
+    <p class="share-body">Not a stranger. Someone specific. Someone you had a conversation with about Hardy Block, or the incinerator, or the traffic, or just about how Portland never seems to get what it deserves.</p>
+
+    <p class="share-body">Send it to them now. Not later. Now.</p>
+
+    <p class="share-body">The WhatsApp group. The neighbour. The person who always says <em>"nothing ever changes"</em> — especially them.</p>
+
+    <div class="share-truth">Portland talks to itself faster than any algorithm.<br>Let's use that.</div>
+
+    <div class="share-buttons">
+      <a id="whatsapp-btn" class="btn-whatsapp" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Share on WhatsApp
+      </a>
+      <button class="btn-copy" id="copy-btn" onclick="copyLink()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        Copy link
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-closing">Every person who has ever crossed that causeway and felt something — this is the day that feeling becomes a vote.</p>
+  <p class="footer-text">Promoted by Richard Edwards on behalf of Lucy Hardwicke, Kia Pope and Bradley Plant (Green Party), all c/o 17 George St, Bristol, BS1 5QT &nbsp;·&nbsp; Unit 21 Mereside, Portland, DT5 1PY</p>
+</footer>
+
+<script>
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  const animatedEls = document.querySelectorAll(
+    '.identity-line, .divider, .wound-heading, .wound-text, .wound-stat, .damning-line, .possibility-intro, .memo-title, .memo-subtitle, .possibility-text, .possibility-big, .people-intro, .candidate-block, .ask-date, .ask-date-sub, .ward-cards, .ask-times, .ask-id-notice, .share-heading, .share-body, .share-truth, .share-buttons'
+  );
+
+  animatedEls.forEach(el => observer.observe(el));
+
+  // Stagger identity lines
+  document.querySelectorAll('.identity-line').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.08}s`;
+  });
+
+  // WhatsApp share
+  const pageUrl = encodeURIComponent(window.location.href);
+  const shareText = encodeURIComponent("Portland isn't the end of the road. It's the beginning of something else entirely. Vote Green on 30 April. ");
+  document.getElementById('whatsapp-btn').href = `https://wa.me/?text=${shareText}${pageUrl}`;
+
+  // Copy link
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy link';
+        btn.classList.remove('copied');
+      }, 2500);
+    });
+  }
+</script>
+</body>
+</html>
