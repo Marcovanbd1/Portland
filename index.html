@@ -563,6 +563,27 @@
     transform: translateY(0);
   }
 
+  .candidate-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .candidate-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+    border: 3px solid var(--green-bright);
+  }
+
+  .candidate-header-text {
+    flex: 1;
+  }
+
   .candidate-ward {
     font-size: 0.7rem;
     letter-spacing: 0.3em;
@@ -577,7 +598,6 @@
     font-weight: 900;
     color: var(--stone);
     line-height: 1.1;
-    margin-bottom: 2rem;
   }
 
   .candidate-text {
@@ -634,6 +654,19 @@
   .green-team strong {
     color: var(--green-dark);
     font-weight: 600;
+  }
+
+  @media (max-width: 480px) {
+    .candidate-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .candidate-photo {
+      width: 120px;
+      height: 120px;
+    }
   }
 
   /* =================== BEAT 6: THE ASK =================== */
@@ -1106,8 +1139,13 @@
 
     <!-- LUCY -->
     <div class="candidate-block">
-      <div class="candidate-ward">Underhill Ward</div>
-      <h3 class="candidate-name">Lucy Hardwicke</h3>
+      <div class="candidate-header">
+        <img src="IMG-2063.jpg" alt="Lucy Hardwicke, Green Party candidate for Underhill Ward" class="candidate-photo">
+        <div class="candidate-header-text">
+          <div class="candidate-ward">Underhill Ward</div>
+          <h3 class="candidate-name">Lucy Hardwicke</h3>
+        </div>
+      </div>
 
       <p class="candidate-text">Lucy was born locally. She has called Portland home since 2015.</p>
 
@@ -1128,8 +1166,13 @@
 
     <!-- MARK -->
     <div class="candidate-block">
-      <div class="candidate-ward">Tophill East Ward</div>
-      <h3 class="candidate-name">Mark Williams</h3>
+      <div class="candidate-header">
+        <img src="IMG-2062.jpg" alt="Mark Williams, Green Party candidate for Tophill East Ward" class="candidate-photo">
+        <div class="candidate-header-text">
+          <div class="candidate-ward">Tophill East Ward</div>
+          <h3 class="candidate-name">Mark Williams</h3>
+        </div>
+      </div>
 
       <p class="candidate-text">Mark was born and bred on Portland.</p>
 
@@ -1214,7 +1257,7 @@
 <!-- FOOTER -->
 <footer>
   <p class="footer-closing">Every person who has ever crossed that causeway and felt something — this is the day that feeling becomes a vote.</p>
-  <p class="footer-text">Promoted by Richard Edwards on behalf of Lucy Hardwicke, Kia Pope and Bradley Plant (Green Party), all c/o 17 George St, Bristol, BS1 5QT &nbsp;·&nbsp; Unit 21 Mereside, Portland, DT5 1PY</p>
+  <p class="footer-text">Promoted by Richard Edwards on behalf of Lucy Hardwicke, Mark Williams, Kia Pope and Bradley Plant (Green Party), all c/o 17 George St, Bristol, BS1 5QT</p>
 </footer>
 
 <script>
